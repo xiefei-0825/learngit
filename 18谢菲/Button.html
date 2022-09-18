@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>haha</h1>
+        <h1 v-show="ok">haha,我是新增的一行</h1>
+        <span v-for="item in list" v-html="item"></span>
+        <hr>
+        <input type="button" @click="addtext" value="点我增加一行">
+        <input type="button" @click="addbutton" value="点我增加一个按钮">
+    </div>
+
+
+    <script type="text/javascript">
+        var vm =new Vue({
+            el: '#app',
+            data: {
+                ok:false,
+                list:[]
+            },
+            methods:{
+                addtext(){
+                    this.ok=true
+                },
+                addbutton(){
+                    this.list.push('<button>haha,我是新增的按钮</button>')
+                }
+            }
+
+        })
+
+    </script>
+    
+</body>
+</html>

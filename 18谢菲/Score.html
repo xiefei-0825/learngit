@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断考试成绩对应的等级</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>请输入张三的成绩：<input type="text" v-model="message"></p>
+        <h2 v-if="60>message">张三的成绩不及格</h2>
+        <h2 v-else-if="message>=60 & 75>message">张三的成绩及格</h2>
+        <h2 v-else-if="message>=75 & 90>message">张三的成绩良好</h2>
+        <h2 v-else-if="message>=90 & 100>=message">张三的成绩优秀</h2>
+        <h2 v-else="message>100">请输入正确的成绩！</h2>
+    </div>
+
+    <script type="text/javascript">
+        var vm =new Vue({
+            el: '#app',
+            data: {
+                message:0
+            }
+        })
+
+    </script>
+</body>
+</html>
